@@ -1,0 +1,28 @@
+{
+    "name": "nathanbate/laravel-contacts",
+    "description": "A way to install contacts to your laravel project",
+    "version": "1.0.0",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Nathanbate\\LaravelContacts\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nathan Bate",
+            "email": "noreply@noreply.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.36"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    }
+}
