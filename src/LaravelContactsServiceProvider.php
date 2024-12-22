@@ -3,6 +3,8 @@
 namespace Nathanbate\LaravelContacts;
 
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
+use Nathanbate\LaravelContacts\Livewire\HelloWorld;
 
 class LaravelContactsServiceProvider extends ServiceProvider
 {
@@ -13,16 +15,12 @@ class LaravelContactsServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        // Load migrations
         $this->loadMigrationsFrom(__DIR__.'/Migrations');
-
-        // Optionally allow publishing of migrations to the main project
-//        $this->publishes([
-//            __DIR__ . '/Migrations' => database_path('migrations'),
-//        ], 'migrations');
-
-        // Load routes
         $this->loadRoutesFrom(__DIR__.'/routes/web.php');
+        $this->loadViewsFrom(__DIR__.'/Views', 'laravel-contacts');
+
+        // Components
+        Livewire::component('laravel-contacts::hello-world', HelloWorld::class);
 
     }
 }
